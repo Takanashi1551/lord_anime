@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hola mundo</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} Lord Anime {% endblock %}
+
+{% block content %}
+
+    <h1>{{ title }}</h1>
+    {% if request.user.is_authenticated %}
+        <h1>
+            bienvenido {{ user.username}}
+        </h1>
+    {% endif %}
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem recusandae autem officia quia
+        sapiente tenetur, aperiam libero quam. Illum cumque facilis maxime architecto placeat eligendi eaque pariatur
+        fuga minus!
+    </p>
+
+{% endblock %}
