@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Registrarse {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            
+            <label for="username">Nombre de usuario</label>
+            <input type="text" id="username" name="username" placeholder="Nombre de usuario" required><br><br>
+            
+            <label for="username">primer nombre</label>
+            <input type="text" id="first_name" name="first_name" placeholder="primer nombre" required><br><br>
+            
+            <label for="username">segundo nombre</label>
+            <input type="text" id="last_name" name="last_name" placeholder="segundo nombre" required><br><br>
+
+            <label for="username">Correo electronico</label>
+            <input type="email" id="email" name="email" placeholder="Correo electronico" required><br><br>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password1" name="password1" placeholder="Contraseña" required><br><br>
+            
+            <label for="password">Confirmar Contraseña</label>
+            <input type="password" id="password2" name="password2" placeholder="Repetir Contraseña" required><br><br>
+
+            <button type="submit">Registrarse</button>
+            <a href="">Forgot Password?</a>
+            <a href="">Don't have an account? Sign up here.</a>
+    
+        </form>
+    </div>
+{% endblock %}
