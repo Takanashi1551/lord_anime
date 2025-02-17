@@ -1,12 +1,875 @@
-body {
+/*----- Style of all the Document -----*/
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: aqua;
+    font-family: 'Shadows Into Light';
 }
 
 :root {
     scroll-behavior: smooth;
 }
 
+/*----- Content of Header -----*/
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+}
 
+.content-navbar {
+    width: 95%; /* space for the bar of navegation */
+}
+
+.navbar-color {
+    background: #667EEA; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #667EEA 0%, #C814FF 100%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667EEA 0%, #C814FF 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.a-active {
+    color: #000000;
+    -webkit-transition: all .3s ease;
+}
+
+.a-nav {
+    color: #ffffff;
+    -webkit-transition: all .3s ease;
+}
+
+.a-nav:hover {
+    color: #000000;
+}
+
+.navbar-margin {
+    margin: 0 10px 0 0;
+}
+
+.btn-login {
+    background: rgba(115, 3, 192, 0.5);
+    color: #FFFFFF;
+    width: 150px;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: auto;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.btn-login:hover {
+    background: rgba(236, 56, 188, 0.6);
+    color: #FFFFFF;
+    -webkit-transition: all .5s ease;
+}
+
+.btn-register {
+    background: rgba(236, 56, 188, 0.6);
+    color: #FFFFFF;
+    width: 150px;
+    height: 35px;
+    outline: none;
+    border: none;
+    padding: auto;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.btn-register:hover {
+    background: rgba(115, 3, 192, 0.5);
+    color: #FFFFFF;
+    -webkit-transform: all.5s ease;
+}
+
+.input-search {
+    background: rgba(216, 181, 255, 0.5);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-search {
+    background-color: rgba(161, 140, 209, 1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.btn-search:hover {
+    background-color: #A18CD1;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.input-search:focus {
+    background: rgba(216, 181, 255, 0.7);
+}
+
+/*----- Content of Main -----*/
+
+/*----- Content of Episodes -----*/
+.background {
+    background-color: rgba(102, 126, 234, 0.4);
+    margin-top: 75px;
+}
+
+.section-title {
+    text-align: center;
+    margin: auto;
+    padding: 5px 0;
+    font-size: 30px;
+}
+
+.content-space {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+}
+
+.content-flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 35px;
+}
+
+.content-box {
+    background: linear-gradient(to top, rgba(161, 140, 209, 0.5) 0%, rgba(251, 194, 235, 0.6) 100%);
+    width: 23%;
+    height: 20%;
+    object-fit: cover;
+    /* margin-bottom: 40px; */
+    border-radius: 20px;
+    margin: 10px 1em 0 0;
+    position: relative;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.content-box .content-image {
+    width: 100%;
+    height: 200px;
+    display: block;
+}
+
+.content-flex .content-box {
+    transition: all 600ms cubic-bezier(1, 0, 0, 1);
+}
+
+.content-flex .content-box:hover {
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 1),
+        5px 5px 0px 0px #D8B5FF, /*Controller the size of transition*/
+        0.3em 0.3em 1em rgba(0, 0, 0, 1);
+    transform: translate(-5px, -5px);
+}
+
+.content-box:hover .text-image {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 300ms ease-out;
+}
+
+.content-box-poster {
+    background: linear-gradient(to top, rgba(161, 140, 209, 0.5) 0%, rgba(251, 194, 235, 0.6) 100%);
+    width: 15%;
+    height: 20%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 1em 0 0;
+    position: relative;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.content-box-poster .content-poster {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+.content-flex .content-box-poster {
+    transition: all 600ms cubic-bezier(1, 0, 0, 1);
+}
+
+.content-flex .content-box-poster:hover {
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 1),
+        5px 5px 0px 0px #d8b5ff, /*Controller the size of transition*/
+        0.3em 0.3em 1em rgba(0, 0, 0, 1);
+    transform: translate(-5px, -5px);
+}
+
+.content-box-poster:hover .text-image {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 300ms ease-out;
+}
+
+.content-text {
+    background: rgba(200, 20, 255, 0.8);
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.text-image {
+    width: 100%;
+    height: 30px;
+    padding: .2em;
+    font-size: 17px;
+    font-family: 'Shadows Into Light';
+    font-weight: 800;
+    color: #000000;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* shorten the letters */
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 300ms ease-out;
+}
+
+/*--- Box text episode and year ---*/
+.text-image-episode {
+    bottom: 82%;
+    height: 14%;
+    padding: .3em;
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 300ms ease-out;
+}
+
+.content-box:hover .text-image-episode {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 300ms ease-out;
+}
+
+.box-episode {
+    background: rgba(236, 56, 188, 0.9);
+    width: 23%;
+    right: 0%;
+    font-weight: 800;
+    color: #000000;
+    font-family: 'Shadows Into Light';
+    letter-spacing: 1px;
+    font-size: 15px;
+    border-top-right-radius: 11px;
+    border-bottom-left-radius: 12px;
+    text-align: center;
+}
+
+/*----- Content of emissions -----*/
+.text-image-issue {
+    bottom: 88%;
+    height: 10%;
+    padding: .4em;
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 300ms ease-out;
+}
+
+.content-box-poster:hover .text-image-issue {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 300ms ease-out;
+}
+
+.box-year {
+    background: rgba(236, 56, 188, 0.9);
+    width: 25%;
+    right: 0%;
+    font-weight: 800;
+    color: #000000;
+    font-family: 'Shadows Into Light';
+    letter-spacing: 1px;
+    font-size: 15px;
+    border-top-right-radius: 11px;
+    border-bottom-left-radius: 12px;
+    text-align: center;
+}
+
+.content-play-image {
+    width: 100%;
+    height: 100%;
+    top: 30%;
+    left: 40%;
+    bottom: calc(100% - 70%);
+    position: absolute;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.content-play {
+    background: rgba(200, 20, 255, 0.8);
+    position: absolute;
+    height: 60px;
+    border-radius: 100px;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 400ms ease-out;
+}
+
+.content-box:hover .content-play {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 400ms ease-out;
+}
+
+.content-color {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* shorten the letters */
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 400ms ease-out;
+}
+
+.content-box-poster:hover .content-color {
+    background: rgba(0, 0, 0, 0.5);
+    height: 300px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 400ms ease-out;
+}
+
+/*----- Responsive Main -----*/
+@media screen and (max-width: 1200px) {
+    .background {
+        margin-top: 63px;
+    }
+
+    .content-box {
+        width: 31%;
+        border-radius: 15px;
+        margin: 7px 1em 0 0;
+    }
+
+    .content-box .content-image {
+        height: 170px;
+    }
+
+    .content-flex .content-box:hover {
+        box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 1),
+            4px 4px 0px 0px #D8B5FF,
+            /*Controller the size of transition*/
+            0.3em 0.3em 1em rgba(0, 0, 0, 1);
+        transform: translate(-4px, -4px);
+    }
+
+    .content-box-poster {
+        width: 22%;
+        height: 20%;
+        border-radius: 15px;
+        margin: 10px 1em 0 0;
+    }
+
+    .content-box-poster .content-poster {
+        height: 260px;
+    }
+
+    .content-text {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content-box {
+        width: 46%;
+    }
+
+    .content-box .content-image {
+        height: 160px;
+    }
+
+    .content-box-poster {
+        width: 29%;
+        margin: 10px 1em 0 0;
+    }
+
+    .content-box-poster .content-poster {
+        height: 250px;
+    }
+
+    .text-image-episode {
+        bottom: 78%;
+        height: 19%;
+        padding: .4em;
+    }
+
+    .box-episode {
+        width: 20%;
+    }
+
+    .text-image-issue {
+        bottom: 86%;
+        height: 13%;
+        padding: .6em;
+    }
+
+    .box-year {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section-title {
+        font-size: 23px;
+    }
+
+    .content-space {
+        width: 100%;
+    }
+
+    .content-box {
+        width: 45%;
+        border-radius: 10px;
+    }
+
+    .content-box-poster {
+        width: 29%;
+        margin: 10px 1em 0 0;
+        border-radius: 10px;
+    }
+
+    .content-box-poster .content-poster {
+        height: 210px;
+    }
+
+    .content-text {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .text-image-episode {
+        bottom: 79%;
+        height: 17%;
+        padding: .5em;
+    }
+
+    .box-episode {
+        width: 30%;
+        font-size: 14px;
+    }
+
+    .text-image-issue {
+        bottom: 83%;
+        height: 15%;
+        padding: .5em;
+    }
+
+    .box-year {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .content-navbar {
+        width: 100%;
+        /* space for the bar of navegation */
+    }
+
+    .content-box {
+        width: 44%;
+    }
+
+    .content-box-poster {
+        width: 43%;
+    }
+
+    .content-box-poster .content-poster {
+        height: 200px;
+    }
+
+
+    .content-play-image {
+        width: 100%;
+        height: 100%;
+        top: 30%;
+        left: 32%;
+        bottom: calc(100% - 70%);
+    }
+
+    .content-play {
+        height: 50px;
+    }
+
+    .box-episode {
+        width: 35%;
+    }
+}
+
+/*----- Container Footer -----*/
+footer {
+    background: #667EEA;
+    background: -webkit-linear-gradient(to top, #667EEA 0%, #C814FF 100%);
+    background: linear-gradient(to right, #667EEA 0%, #C814FF 100%);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.footer-content p {
+    color: #FFFFFF;
+    font-size: 25px;
+    font-family: 'Shadows Into Light';
+}
+
+@media screen and (max-width:500px) {
+    .footer-content p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .footer-content p {
+        font-size: 15px;
+    }
+}
+
+/*----- Content of Login, Signup and Recover -----*/
+
+/*----- Content Login -----*/
+.body-login-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, hsla(0, 0%, 0%, 0.3) 100%), url(../img/aincrad.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-content {
+    width: 420px;
+    background: #667EEA; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, rgba(102, 126, 234, 0.6) 0%, rgba(251, 194, 235, 0.6) 100%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(102, 126, 234, 0.6) 0%, rgba(251, 194, 235, 0.6) 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #000000;
+    border-radius: 10px;
+    padding: 30px 40px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-content h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.login-content .input-content {
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.input-content input {
+    background: rgba(216, 181, 255, 0.5);
+    color: #000000;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    font-size: 16px;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-content input::placeholder {
+    color: #000000;
+}
+
+.input-content i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.login-content .remember-forgot-content {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin: -10px 0 15px;
+}
+
+.remember-forgot-content label input {
+    accent-color: #000000;
+    margin-right: 3px;
+}
+
+.remember-forgot-content a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.remember-forgot-content a:hover {
+    text-decoration: underline;
+}
+
+.login-content .btn-login-signup {
+    width: 100%;
+    height: 45px;
+    background: rgba(115, 3, 192, 0.5);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 15px;
+    color: #FFFFFF;
+    font-weight: 600;
+    -webkit-transition: all .5s ease;
+}
+
+.login-content .btn-login-signup:hover {
+    background: rgba(236, 56, 188, 0.6);
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.login-content .register-content {
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-content p a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-content p a:hover {
+    text-decoration: underline;
+}
+
+/*----- Signup -----*/
+.body-signup-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, hsla(0, 0%, 0%, 0.3) 100%), url(../img/register.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*----- Recover -----*/
+.body-recover-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, hsla(0, 0%, 0%, 0.3) 100%), url(../img/recover.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width:500px) {
+    .login-content {
+        width: 380px;
+        border-radius: 15px;
+        padding: 25px 35px;
+    }
+
+    .login-content h1 {
+        font-size: 20px;
+    }
+
+    .login-content .input-content {
+        height: 50px;
+        margin: 25px 0;
+    }
+
+    .input-content input {
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+    }
+
+    .input-content i {
+        right: 15px;
+        transform: translateY(-50%);
+        font-size: 18px;
+    }
+
+    .login-content .remember-forgot-content {
+        font-size: 14px;
+    }
+
+    .login-content .btn-login-signup {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .login-content .register-content {
+        font-size: 14px;
+        margin: 15px 0 15px;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .login-content {
+        width: 300px;
+        padding: 15px 20px;
+    }
+
+    .login-content h1 {
+        font-size: 21px;
+    }
+
+    .login-content .input-content {
+        height: 34px;
+        margin: 25px 0;
+    }
+
+    .input-content i {
+        right: 16px;
+        top: 60%;
+        transform: translateY(-40%);
+        font-size: 16px;
+    }
+
+    .login-content .remember-forgot-content {
+        font-size: 14px;
+        margin: -5px 0 15px;
+    }
+
+    .remember-forgot-content label input {
+        margin-right: 0px;
+    }
+
+    .login-content .btn-login-signup {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .login-content .register-content {
+        font-size: 14px;
+        margin: 8px 0 8px;
+    }
+}
+
+/*----- Content of See Animes (ver) -----*/
+.see-container {
+    display: flex;
+    line-height: 25px;
+    display: inline-block;
+    width: 100%;
+}
+
+.see-display {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.see-image img {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.see-container .see-image {
+    background-size: cover;
+    width: 55%;
+    height: 400px;
+    border-radius: 15px;
+}
+
+.see-position {
+    width: 25%;
+}
+
+.see-margin {
+    margin-bottom: -120px;
+}
+
+.see-description {
+    margin-bottom: 7px;
+    color: #000000;
+    font-size: 18px;
+    text-align: justify;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.see-commit {
+    text-align: center;
+}
+
+.see-title {
+    width: 90%;
+    margin: auto;
+    padding: 10px 0;
+    font-size: 30px;
+}
+
+.row .see-anime-chevron i {
+    color: #FFFFFF;
+    font-size: 40px;
+    background-color: #C814FF;
+    border-radius: 40px;
+    margin: 5px 0px 10px;
+}
+
+.see-anime-episodes {
+    border-radius: 40px;
+    margin: 5px 0px 9px;
+    text-align: center;
+    padding: 5px 0;
+    width: 150px;
+    background-color: #667EEA;
+}
+
+.see-anime-episodes a {
+    font-size: 17px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+}
+
+.see-anime-episodes i {
+    font-size: 17px;
+    margin: 5px 0px 10px;
+}
+
+/*----- Content of Animes (ver animes) -----*/

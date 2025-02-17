@@ -3,16 +3,14 @@
 {% block title %} Lord Anime {% endblock %}
 
 {% block content %}
-
     <h1>{{ title }}</h1>
     {% if request.user.is_authenticated %}
         <h1>
-            bienvenido {{ user.username}}
+            bienvenido {{ user.username }}
         </h1>
     {% endif %}
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem recusandae autem officia quia
         sapiente tenetur, aperiam libero quam. Illum cumque facilis maxime architecto placeat eligendi eaque pariatur
         fuga minus!
     </p>
-
 {% endblock %}
