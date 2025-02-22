@@ -134,3 +134,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
+
+#Codigo para que no expire la sesion
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+
+# Tiempo de expiración de la sesión (7 días)
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 7  

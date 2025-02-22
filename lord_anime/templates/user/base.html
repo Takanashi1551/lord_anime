@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-{% block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- style bootstrap5 -->
@@ -13,7 +11,6 @@
     {% load static %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/estilos.css' %}">
     <title>{% block title %}{% endblock %}</title>
-{% endblock %}
 </head>
 
 <body>
@@ -74,13 +71,23 @@
         </nav>
     </header>
     {% endblock %}
-    
+    <!-- Content of Redirect Javascript -->
+    {% if user.is_authenticated %}
+        {% if user.is_superuser %}
+            <div id="redirect-data" data-url="{% url 'admin_dashboard' %}"></div>
+        {% endif %}
+    {% endif %}
+
     <!-- Content of Main -->
-    <!-- Content of Episodes -->
     {% block content %}
-        
     {% endblock %}
+
+    <!-- Content of Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Custom Boxicons -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- configuration redirection URL -->
+    <script src="{% static 'js/script.js' %}" defer></script>
 </body>
 
 </html>

@@ -1,7 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'user/base.html' %}
 
 {% block title %} Lord Anime {% endblock %}
 
+<!-- Content of Episodes -->
 {% block content %}
     <h1>{{ title }}</h1>
     {% if request.user.is_authenticated %}
@@ -14,3 +15,4 @@
         fuga minus!
     </p>
 {% endblock %}
+

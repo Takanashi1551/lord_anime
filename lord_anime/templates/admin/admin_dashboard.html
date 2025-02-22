@@ -1,0 +1,24 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<body>
+    <!--configuration redirect URL javascript -->
+    {% if user.is_authenticated %}
+        {% if user.is_superuser %}
+        {% else %}
+            <div id="redirect-data" data-url="{% url 'user_dashboard' %}"></div>
+        {% endif %}
+    {% else %}
+        <div id="redirect-data" data-url="{% url 'index' %}"></div>
+    {% endif %}
+</body>
+</html> -->
+
+
+
