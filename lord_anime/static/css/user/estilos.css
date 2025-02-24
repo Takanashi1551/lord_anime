@@ -23,9 +23,9 @@
 }
 
 .navbar-color {
-    background: #667EEA; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #667EEA 0%, #C814FF 100%); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #667EEA 0%, #C814FF 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #89CFF0; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #89CFF0 0%, #8000FF 100%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89CFF0 0%, #8000FF 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .a-active {
@@ -39,15 +39,17 @@
 }
 
 .a-nav:hover {
-    color: #000000;
+    color: #89CFF0;
+    transform: translate(-2px, -2px);
 }
 
 .navbar-margin {
     margin: 0 10px 0 0;
 }
 
+/*----- Content of Bottons of Headers -----*/
 .btn-login {
-    background: rgba(115, 3, 192, 0.5);
+    background: linear-gradient(to bottom, #e04f7f, #8d20ba );
     color: #FFFFFF;
     width: 150px;
     height: 35px;
@@ -63,13 +65,16 @@
 }
 
 .btn-login:hover {
-    background: rgba(236, 56, 188, 0.6);
+    background: linear-gradient(to bottom, #8d20ba, #e04f7f);
     color: #FFFFFF;
     -webkit-transition: all .5s ease;
+    /* elevation Botton in the mouse */
+    transform: translate(-2px, -2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .btn-register {
-    background: rgba(236, 56, 188, 0.6);
+    background: linear-gradient(to bottom, #2575FC, #6A11CB);
     color: #FFFFFF;
     width: 150px;
     height: 35px;
@@ -85,11 +90,66 @@
 }
 
 .btn-register:hover {
-    background: rgba(115, 3, 192, 0.5);
+    background: linear-gradient(to bottom, #6A11CB, #2575FC);
     color: #FFFFFF;
     -webkit-transform: all.5s ease;
+    /* elevation Botton in the mouse */
+    transform: translate(-2px, -2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
 }
 
+.btn-perfil {
+    background: linear-gradient(to bottom, #FF66C4, #8E44AD);
+    color: #FFFFFF;
+    width: 150px;
+    height: 35px;
+    outline: none;
+    border: none;
+    padding: auto;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.btn-perfil:hover {
+    background: linear-gradient(to bottom, #8E44AD, #FF66C4);
+    color: #FFFFFF;
+    -webkit-transform: all.5s ease;
+    /* elevation Botton in the mouse */
+    transform: translate(-2px, -2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.btn-logout {
+    background: linear-gradient(to bottom, #2aa9cc, #8e44ad);
+    color: #FFFFFF;
+    width: 150px;
+    height: 35px;
+    outline: none;
+    border: none;
+    padding: auto;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.btn-logout:hover {
+    background: linear-gradient(to bottom, #8e44ad, #2aa9cc);
+    color: #FFFFFF;
+    -webkit-transform: all.5s ease;
+    /* elevation Botton in the mouse */
+    transform: translate(-2px, -2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+/*----- Content of Botton Search Bar -----*/
 .input-search {
     background: rgba(216, 181, 255, 0.5);
     border-radius: 20px;
@@ -565,7 +625,7 @@ footer {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, hsla(0, 0%, 0%, 0.3) 100%), url(../img/aincrad.jpg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, hsla(0, 0%, 0%, 0.3) 100%), url(../../img/user/login.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -699,7 +759,7 @@ footer {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, hsla(0, 0%, 0%, 0.3) 100%), url(../img/register.jpg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, hsla(0, 0%, 0%, 0.3) 100%), url(../../img/user/register.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

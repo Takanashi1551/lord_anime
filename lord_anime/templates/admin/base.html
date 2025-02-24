@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- style bootstrap5 -->
+    <!-- Style bootstrap5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Custom Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- Style of css -->
+    <!-- Style CSS -->
     {% load static %}
-    <link type="text/css" rel="stylesheet" href="{% static 'css/user/estilos.css' %}">
-    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/admin/estilos.css' %}">
+    <title>{% block title %} {% endblock %}</title>
 </head>
-
 <body>
-    <!--  Content of Header -->
+    <!-- Content of Header admin -->
     {% block menu %}
     <header class="header">
         <nav class="navbar navbar-expand-xl navbar-color">
@@ -30,13 +26,13 @@
                             <a class="nav-link active a-active navbar-margin fs-5" aria-current="page" href={% url 'index' %}>Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link a-nav navbar-margin fs-5" href={% url 'index' %}>Anime</a>
+                            <a class="nav-link a-nav navbar-margin fs-5" href={% url 'index' %}>Usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link a-nav navbar-margin fs-5" href="#">En Emision</a>
+                            <a class="nav-link a-nav navbar-margin fs-5" href="#">Contenido Anime</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link a-nav navbar-margin fs-5" href="#">Calendario</a>
+                            <a class="nav-link a-nav navbar-margin fs-5" href="#">Comentarios</a>
                         </li>
                     </ul>
                 </div>
@@ -44,11 +40,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             {% if request.user.is_authenticated %}
-                            <a class="btn me-md-2 btn-perfil" href="#">Mi perfil</a>
-                            <a class="btn me-md-2 btn-logout" href={% url 'exit' %}>Cerrar Sesión</a>
-                            {% else %}
-                            <a class="btn me-md-2 btn-login" href={% url 'login' %}>Iniciar Sesión</a>
-                            <a class="btn me-md-2 btn-register" href={% url 'register' %}>Registrarse</a>
+                            <a class="btn me-md-2 btn-login" href={% url 'exit' %}>Cerrar Sesión</a>
                             {% endif %}
                         </li>
                     </ul>
@@ -70,15 +62,5 @@
         </nav>
     </header>
     {% endblock %}
-    <!-- Content of Main -->
-    {% block content %}
-    {% endblock %}
-    <!-- Content of Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- Custom Boxicons -->
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <!-- configuration redirection URL -->
-    <script src="{% static 'js/redirect.js' %}" defer></script>
 </body>
-
 </html>
