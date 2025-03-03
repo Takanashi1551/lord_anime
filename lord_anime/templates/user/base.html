@@ -11,6 +11,8 @@
     <!-- Style of css -->
     {% load static %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/user/estilos.css' %}">
+    <!-- Icon of the page -->
+    <link rel="icon" href="../../static/img/user/lord-anime-ico.ico" type="image/x-icon">
     <title>{% block title %}{% endblock %}</title>
 </head>
 
@@ -20,17 +22,17 @@
     <header class="header">
         <nav class="navbar navbar-expand-xl navbar-color">
             <div class="container-fluid content-navbar p-1">
-                <a class="navbar-brand fs-5" href={% url 'index' %}>Lord Anime</a>
+                <a class="navbar-brand fs-5" href={% url 'index' %}><img src="../../static/img/user/lord-anime.png" class="navbar-logo" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active a-active navbar-margin fs-5" aria-current="page" href={% url 'index' %}>Inicio</a>
+                            <a class="nav-link active a-active navbar-margin fs-5" aria-current="page" href={% url 'index' %}><i class='bx bxs-home-alt-2'></i>Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link a-nav navbar-margin fs-5" href={% url 'index' %}>Anime</a>
+                            <a class="nav-link a-nav navbar-margin fs-5" href="#">Anime</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link a-nav navbar-margin fs-5" href="#">En Emision</a>
@@ -44,7 +46,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             {% if request.user.is_authenticated %}
-                            <a class="btn me-md-2 btn-perfil" href="#">Mi perfil</a>
+                            <a class="btn me-md-2 btn-perfil" href={% url 'profile' %}>Mi perfil</a>
                             <a class="btn me-md-2 btn-logout" href={% url 'exit' %}>Cerrar Sesión</a>
                             {% else %}
                             <a class="btn me-md-2 btn-login" href={% url 'login' %}>Iniciar Sesión</a>
@@ -72,6 +74,17 @@
     {% endblock %}
     <!-- Content of Main -->
     {% block content %}
+    {% endblock %}
+    <!-- Content of Footer -->
+    {% block footer %}
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>Desarrollado por Takanashi</p>
+                <p>&copy; 2023 | Lord Anime</p>
+            </div>
+        </div>
+    </footer>
     {% endblock %}
     <!-- Content of Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

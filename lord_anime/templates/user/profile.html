@@ -1,0 +1,22 @@
+{% extends 'user/base.html' %}
+<!-- Content of Title -->
+{% block title %} Perfil {% endblock %}
+
+<!-- Content of Main -->
+{% block content %}
+<main class="background-profile">
+    <section class="p-1">
+        {% if request.user.is_authenticated %}
+            <div class="position-relative">
+                <div class="position-absolute start-50 translate-middle-x">
+                    <br>
+                    <img class="mx-auto d-block profile-picture" src="../../static/img/user/profile_male.png" alt="">
+                    <h1 class="fs-2 mx-auto text-center letter-profile">
+                        {{ title | upper }} "{{ user.username | upper }}"
+                    </h1>
+                </div>
+            </div>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}

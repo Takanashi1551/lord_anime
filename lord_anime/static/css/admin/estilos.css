@@ -8,105 +8,89 @@
 
 :root {
     scroll-behavior: smooth;
-}/*----- Content of Header -----*/
-.header {
-    position: fixed;
+}
+
+/*----- Style of the Body -----*/
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*----- Style of the Admin Content -----*/
+.body-admin-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, hsla(0, 0%, 0%, 0.3) 100%), url(../../img/admin/admin-fond.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+}
+
+.body-admin-content h1{
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 0 0 10px #00ccff, 0 0 20px #0088ff;
+    backdrop-filter: blur(1px);
+}
+
+.admin-content {
+    width: 800px;
+    height: 400px;
+    color: #000000;
+    border-radius: 10px;
+    padding: 70px 80px;
+}
+
+.admin-content .button-content {
     width: 100%;
-    z-index: 100;
-    top: 0;
+    height: 50px;
+    margin: 20px 0;
+    position: absolute;
+    display: grid; /* comando para poder hacer que los dos botones esten lado a lado */
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 30px;
+    max-width: 600px;
+    margin: auto;
+    justify-content: center;
 }
 
-.content-navbar {
-    width: 95%; /* space for the bar of navegation */
-}
-
-.navbar-color {
-    background: #667EEA; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #667EEA 0%, #C814FF 100%); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #667EEA 0%, #C814FF 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.a-active {
-    color: #000000;
-    -webkit-transition: all .3s ease;
-}
-
-.a-nav {
-    color: #ffffff;
-    -webkit-transition: all .3s ease;
-}
-
-.a-nav:hover {
-    color: #000000;
-}
-
-.navbar-margin {
-    margin: 0 10px 0 0;
-}
-
-.btn-login {
-    background: rgba(115, 3, 192, 0.5);
+.button-content a {
     color: #FFFFFF;
-    width: 150px;
-    height: 35px;
-    border: none;
+    background: linear-gradient(to bottom,#cb2525, #1e90ff);
+    border-radius: 25px;
     outline: none;
+    text-decoration: none;
+    font-size: 40px;
+    text-align: center;
+    width: 300px;
+    height: 100%;
     padding: auto;
-    font-size: 15px;
-    font-weight: 600;
+    font-weight: 500; /* sirve para el grosor de las letras */
     letter-spacing: 1px;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     -webkit-transition: all .5s ease-in-out;
+    transition: all .5 ease-in-out;
+    transform: translate(-2px, -2px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-.btn-login:hover {
-    background: rgba(236, 56, 188, 0.6);
-    color: #FFFFFF;
-    -webkit-transition: all .5s ease;
+.button-content a i {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.btn-register {
-    background: rgba(236, 56, 188, 0.6);
-    color: #FFFFFF;
-    width: 150px;
-    height: 35px;
-    outline: none;
-    border: none;
-    padding: auto;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+a:hover {
+    background: linear-gradient(to bottom, #1e90ff, #cb2525);
+    color: #000000;
     -webkit-transition: all .5s ease-in-out;
-}
-
-.btn-register:hover {
-    background: rgba(115, 3, 192, 0.5);
-    color: #FFFFFF;
-    -webkit-transform: all.5s ease;
-}
-
-.input-search {
-    background: rgba(216, 181, 255, 0.5);
-    border-radius: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-}
-
-.btn-search {
-    background-color: rgba(161, 140, 209, 1);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 0px;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-}
-
-.btn-search:hover {
-    background-color: #A18CD1;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-}
-
-.input-search:focus {
-    background: rgba(216, 181, 255, 0.7);
+    /* elevation Botton in the mouse */
+    transform: translate(-8px, -8px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
 }

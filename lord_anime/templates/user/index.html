@@ -4,15 +4,45 @@
 
 <!-- Content of Episodes -->
 {% block content %}
-    <h1>{{ title }}</h1>
-    {% if request.user.is_authenticated %}
-        <h1>
-            bienvenido {{ user.username }}
-        </h1>
-    {% endif %}
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem recusandae autem officia quia
-        sapiente tenetur, aperiam libero quam. Illum cumque facilis maxime architecto placeat eligendi eaque pariatur
-        fuga minus!
-    </p>
+    <main class="background">
+        <section class="p-1">
+            <h2 class="section-title">Ultimos episodios agregados:</h2>
+            <div class="content-space">
+                <div class="content-flex">
+                    <div class="content-box">
+                        <a href="ver.html"><img src="../../static/img/animes/chapter/uno.png" class="content-image">
+                            <h1 class="content-text text-image">primer anime</h1>
+                            <h2 class="text-image-episode box-episode">Ep 1</h2>
+                            <div class="content-play-image">
+                                <img class="content-play" src="../../static/img/user/play.png">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Content of emissions -->
+        <section class="p-1">
+            <h2 class="section-title">Animes en emisión</h2>
+            <div class="content-space">
+                <div class="content-flex">
+                    <div class="content-box-poster">
+                        <a href="anime.html"><img src="../../static/img/animes/posters/poster1.jpg" class="content-poster">
+                            <h1 class="content-text text-image">Hola mundo Hola</h1>
+                            <h2 class="text-image-issue box-year">2021</h2>
+                            <div class="content-color"></div>
+                        </a>
+                    </div>
+                    <div class="content-box-poster">
+                        <a href="anime.html"><img src="../../static/img/animes/posters/poster1.jpg" class="content-poster">
+                            <h1 class="content-text text-image">Hola mundo Hola</h1>
+                            <h2 class="text-image-issue box-year">2021</h2>
+                            <div class="content-color"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>   
+    </main>
 {% endblock %}
 

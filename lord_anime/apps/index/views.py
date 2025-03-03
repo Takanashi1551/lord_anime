@@ -10,9 +10,7 @@ def indexView(request):
     if request.user.is_superuser:
         return redirect('admin_dashboard')
 # codigo para redireccionar al index del admin cuando usamos la urls.py
-    title = 'Hola angel'
     return render(request, 'user/index.html',{
-        'title': title
     })
 
 # Views of login

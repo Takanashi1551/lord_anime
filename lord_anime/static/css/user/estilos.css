@@ -6,6 +6,13 @@
     font-family: 'Shadows Into Light';
 }
 
+/*----- Style of all the Document HTML and Body -----*/
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 :root {
     scroll-behavior: smooth;
 }
@@ -19,13 +26,18 @@
 }
 
 .content-navbar {
-    width: 95%; /* space for the bar of navegation */
+    width: 90%; /* space for the bar of navegation */
 }
 
 .navbar-color {
-    background: #89CFF0; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #89CFF0 0%, #8000FF 100%); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #89CFF0 0%, #8000FF 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #7fcff4; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #7fcff4 0%, #6A5ACD 100%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7fcff4 0%, #6A5ACD 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.navbar-logo {
+    width: 150px;
+    height: 50px;
 }
 
 .a-active {
@@ -74,7 +86,7 @@
 }
 
 .btn-register {
-    background: linear-gradient(to bottom, #2575FC, #6A11CB);
+    background: linear-gradient(to bottom, #4887f5, #6A11CB);
     color: #FFFFFF;
     width: 150px;
     height: 35px;
@@ -90,7 +102,7 @@
 }
 
 .btn-register:hover {
-    background: linear-gradient(to bottom, #6A11CB, #2575FC);
+    background: linear-gradient(to bottom, #6A11CB, #4887f5);
     color: #FFFFFF;
     -webkit-transform: all.5s ease;
     /* elevation Botton in the mouse */
@@ -175,9 +187,27 @@
 
 /*----- Content of Main -----*/
 
+/*----- Content of Profile -----*/
+.background-profile {
+    background-color: #FAFBFD;
+    margin-top: 75px;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.profile-picture {
+    width: 35%;
+    height: 35%;
+    border-radius: 200px;
+}
+
+.letter-profile {
+    color: #000000;
+}
 /*----- Content of Episodes -----*/
 .background {
-    background-color: rgba(102, 126, 234, 0.4);
+    background-color: #FAFBFD;
     margin-top: 75px;
 }
 
@@ -585,9 +615,9 @@
 
 /*----- Container Footer -----*/
 footer {
-    background: #667EEA;
-    background: -webkit-linear-gradient(to top, #667EEA 0%, #C814FF 100%);
-    background: linear-gradient(to right, #667EEA 0%, #C814FF 100%);
+    background: #7fcff4; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #7fcff4 0%, #6A5ACD 100%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7fcff4 0%, #6A5ACD 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .footer-content {
@@ -633,9 +663,9 @@ footer {
 
 .login-content {
     width: 420px;
-    background: #667EEA; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, rgba(102, 126, 234, 0.6) 0%, rgba(251, 194, 235, 0.6) 100%); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, rgba(102, 126, 234, 0.6) 0%, rgba(251, 194, 235, 0.6) 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #7FCFF4 ; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, rgba(127, 207, 244, 0.6) 0%, rgba(106, 90, 205, 0.6) 100%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(127, 207, 244, 0.6) 0%, rgba(106, 90, 205, 0.6) 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #000000;
     border-radius: 10px;
     padding: 30px 40px;
@@ -718,23 +748,25 @@ footer {
 }
 
 .login-content .btn-login-signup {
+    background: linear-gradient(to bottom, #4887f5, #6A11CB);
     width: 100%;
     height: 45px;
-    background: rgba(115, 3, 192, 0.5);
     border: none;
     outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
-    font-size: 15px;
+    font-size: 20px;
     color: #FFFFFF;
     font-weight: 600;
-    -webkit-transition: all .5s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    -webkit-transition: all .5s ease-in-out;
 }
 
 .login-content .btn-login-signup:hover {
-    background: rgba(236, 56, 188, 0.6);
-    -webkit-transition: all .5s ease-in-out;
+    background: linear-gradient(to bottom, #6A11CB,#4887f5 );
+    -webkit-transition: all .5s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .login-content .register-content {
