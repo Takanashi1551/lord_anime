@@ -7,4 +7,4 @@ class users_photo(models.Model):
     fk_users_aut_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return self.fk_users_aut_user.username
+        return str(self.fk_users_aut_user)

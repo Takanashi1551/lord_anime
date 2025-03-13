@@ -17,6 +17,14 @@ html, body {
     flex-direction: column;
 }
 
+body {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, hsla(0, 0%, 0%, 0.3) 100%), url(../../img/admin/admin-fond.jpg);
+    min-height: responsive;
+    min-width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
 /*----- Style of the Admin Content -----*/
 .body-admin-content {
     display: flex;
@@ -93,4 +101,16 @@ a:hover {
     /* elevation Botton in the mouse */
     transform: translate(-8px, -8px);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/*----- Style of the Admin user, photo, etc -----*/
+.content-view-admin h1 {
+    color: black;
+    padding: 10px 50px 15px;
+    text-align: center;
+}
+
+/*----- content Style table -----*/
+.table th, td {
+    text-align: center;
 }
