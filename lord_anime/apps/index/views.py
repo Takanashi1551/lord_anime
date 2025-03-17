@@ -65,6 +65,9 @@ def registerView(request):
             return redirect('/')
     return render(request, 'registration/register.html', data)
 
+def resetPasswordView(request):
+    return render(request, 'registration/password_reset_form.html')
+
 # Views of logout
 def logoutView(request):
     logout(request)

@@ -3,9 +3,33 @@
 {% block title %} Editar Usuario {% endblock %}
 
 {% block content %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn-login-signup">Guardar</button>
-    </form>
+    <div class="body-user-content">
+        <div class="user-content">
+            <form method="POST">
+                {% csrf_token %}
+                <h1>Editar usuario</h1>
+                <div class="input-content">
+                    <input type="text" name="username" id="username" value="{{ usuario.username }}" required>
+                    <i class='bx bxs-user' ></i>
+                </div>
+                <div class="input-content">
+                    <input type="email" name="email" id="email" value="{{ usuario.email }}" required>
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="input-content">
+                    <select name="is_superuser" id="is_superuser">
+                        <option value="0" {% if not usuario.is_superuser %}selected{% endif %}>Usuario</option>
+                        <option value="1" {% if usuario.is_superuser %}selected{% endif %}>Administrador</option>
+                    </select>
+                </div>
+                <div class="input-content">
+                    <select name="is_active" id="is_active">
+                        <option value="1">Activar cuenta</option>
+                        <option value="0">Desactivar cuentar</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-admin">Guardar</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}

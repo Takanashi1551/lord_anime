@@ -8,11 +8,11 @@
         <h1>"Bienvenido {{ user.username | upper }}"</h1>
             <div class="admin-content">
                 <div class="button-content">
-                    <a href="">Inicio<i class='bx bxs-home'></i></i></a>
                     <a href={% url 'user' %}>Usuarios<i class='bx bxs-user'></i></a>
                     <a href={% url 'animes' %}>Subir<i class='bx bx-plus-circle'></i></a>
                     <a href="">Poster<i class='bx bxs-image'></i></a>
                     <a href="">Comentarios</a>
+                    <a href={% url 'editar_pass' %}>password<i class='bx bxs-key'></i></i></i></a>
                     <a href={% url 'exit' %}>Cerrar Sesión</a>
                 </div>
             </div>

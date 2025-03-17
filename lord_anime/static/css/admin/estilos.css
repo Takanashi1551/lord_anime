@@ -13,6 +13,7 @@
 /*----- Style of the Body -----*/
 html, body {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -23,6 +24,7 @@ body {
     min-width: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: none;
 }
 
 /*----- Style of the Admin Content -----*/
@@ -30,7 +32,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, hsla(0, 0%, 0%, 0.3) 100%), url(../../img/admin/admin-fond.jpg);
     background-size: cover;
     background-position: center;
@@ -103,6 +105,41 @@ a:hover {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
 }
 
+@media screen and (max-width:920px) {
+    html, body {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-position: center;
+        background-repeat: none;
+    }
+
+    .body-admin-content h1{
+        font-size: 30px;
+    }
+
+    .admin-content .button-content {
+        height: 20px;
+        margin: 5px 0;
+        gap: 10px;
+        max-width: 600px;
+    }
+
+    .button-content a {
+        border-radius: 20px;
+        font-size: 35px;
+        font-weight: 300; /* sirve para el grosor de las letras */;
+    }
+
+.admin-content {
+    width: 750px;
+    height: 300px;
+    padding: 20px 80px;
+    }
+}
+
 /*----- Style of the Admin user, photo, etc -----*/
 .content-view-admin h1 {
     color: black;
@@ -111,6 +148,192 @@ a:hover {
 }
 
 /*----- content Style table -----*/
-.table th, td {
+.table th, td ,a , button{
     text-align: center;
+}
+
+.table a, button {
+    width: 40%;
+    text-align: center;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #1e90ff, #cb2525);
+    color: #000000;
+    -webkit-transition: all .5s ease-in-out;
+    /* elevation Botton in the mouse */
+    transform: translate(-8px, -8px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/*----- content Style user form -----*/
+.body-user-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+.user-content {
+    width: 420px;
+    background: #7FCFF4 ; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, rgba(127, 207, 244, 0.6) 0%, rgba(106, 90, 205, 0.6) 100%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(127, 207, 244, 0.6) 0%, rgba(106, 90, 205, 0.6) 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #000000;
+    border-radius: 10px;
+    padding: 30px 40px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-content h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-content .input-content {
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.input-content input {
+    background: rgba(216, 181, 255, 0.5);
+    color: #000000;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    font-size: 16px;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-content select {
+    background: rgba(216, 181, 255, 0.5);
+    color: #000000;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    font-size: 16px;
+    padding: 12px 45px 20px 20px;
+}
+
+option{
+    font-size: 15px;
+    padding: 15px;
+}
+
+
+.input-content input::placeholder {
+    color: #000000;
+}
+
+.input-content i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.user-content .btn-admin {
+    background: linear-gradient(to bottom,#CB2525, #1E90FF);
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 500; /* sirve para el grosor de las letras */
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5 ease-in-out;
+    transform: translate(-2px, -2px);
+}
+
+.user-content .btn-admin:hover {
+    background: linear-gradient(to bottom, #1E90FF, #CB2525);
+    -webkit-transition: all .5s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width:920px) {
+    .body-user-content{
+        min-height: 100vh;
+    }
+
+    .user-content {
+        width: 360px;
+        border-radius: 15px;
+        padding: 20px 25px;
+    }
+
+    .user-content h1 {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .body-user-content{
+        min-height: 90vh;
+    }
+
+    .user-content {
+        width: 380px;
+        border-radius: 15px;
+        padding: 25px 35px;
+    }
+
+    .user-content h1 {
+        font-size: 20px;
+    }
+
+    .user-content .input-content {
+        height: 50px;
+        margin: 25px 0;
+    }
+
+    .input-content input {
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+    }
+
+    .input-content i {
+        right: 15px;
+        transform: translateY(-50%);
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .user-content {
+        width: 300px;
+        padding: 15px 20px;
+    }
+
+    .user-content h1 {
+        font-size: 21px;
+    }
+
+    .user-content .input-content {
+        height: 34px;
+        margin: 25px 0;
+    }
+
+    .input-content i {
+        right: 16px;
+        top: 60%;
+        transform: translateY(-40%);
+        font-size: 16px;
+    }
 }

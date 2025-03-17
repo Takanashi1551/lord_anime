@@ -1,0 +1,31 @@
+{% extends 'admin/base.html' %}
+
+{% block title %} Editar password {% endblock %}
+
+{% block content %}
+    <div class="body-user-content">
+        <div class="user-content">
+            <form method="POST">
+                {% csrf_token %}
+                <h1>Editar password</h1>
+                <div class="input-content">
+                    <input type="password" name="old_password" id="old_password" class="form-control"  placeholder="Contraseña Actual" required>
+                    <i class='bx bxs-key' ></i>
+                </div>
+                <div class="input-content">
+                    <input type="password" name="new_password1" id="new_password1" class="form-control" placeholder="Nueva Contraseña" required>
+                    <i class='bx bxs-key' ></i>
+                </div>
+                <div class="input-content">
+                    <input type="password" name="new_password2" id="new_password2" class="form-control" placeholder="Confirmar Nueva Contraseña" required>
+                    <i class='bx bxs-key' ></i>
+                </div>
+                <button type="submit" class="btn-admin">Guardar</button>
+            </form>
+            {% for message in messages %}
+                <div class="alert alert-info mt-2">{{ message }}</div>
+            {% endfor %}
+        </div>
+        
+    </div>
+{% endblock %}
