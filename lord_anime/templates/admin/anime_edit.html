@@ -1,0 +1,38 @@
+{% extends "admin/base.html" %}
+
+{% block title %} Editar Anime {% endblock %}
+
+{% block content %}
+<div class="body-user-content">
+    <div class="user-content">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Editar Anime</h1>
+            <div class="input-content">
+                <input type="text" name="animes_name" id="animes_name" maxlength="240" placeholder="Nombre del anime" value="{{ anime.animes_name }}">
+                <i class='bx bxs-happy'></i>
+            </div>
+            <div class="text-area">
+                <textarea name="animes_sypnosis" id="animes_sypnosis" cols="40" rows="6" maxlength="2000" placeholder="Escribe la sipnosis del anime">{{ anime.animes_sypnosis }}</textarea>
+            </div>
+            <div class="radio-area">
+                    <div><input type="radio" name="animes_status" id="animes_status" value="1" {% if anime.animes_status == 1 %}checked{% endif %}>Emisión</div>
+                    <div><input type="radio" name="animes_status" id="animes_status" value="0" {% if anime.animes_status == 0 %}checked{% endif %}>Finalizado</div>
+            </div>
+            <div class="input-content">
+                <select name="animes_type"id="animes_type"  maxlength="240" >
+                    <option value="Anime" {% if anime.animes_type == 'Anime' %}selected{% endif %} >Anime</option>
+                    <option value="OVA" {% if anime.animes_type == 'OVA' %}selected{% endif %}>OVA</option>
+                    <option value="Especial" {% if anime.animes_type == 'Especial' %}selected{% endif %}>Especial</option>
+                    <option value="Pelicula" {% if anime.animes_type == 'Pelicula' %}selected{% endif %}>Pelicula</option>
+                </select>
+            </div>
+            <div class="input-content">
+                <input type="text" name="animes_release_year" id="animes_release_year" value="{{ anime.animes_release_year }}">
+                <i class='bx bxs-calendar-alt'></i>
+            </div>
+            <button type="submit" class="btn-admin">Guardar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

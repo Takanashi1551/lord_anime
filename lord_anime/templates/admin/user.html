@@ -1,11 +1,14 @@
 {% extends 'admin/base.html' %}
 
-{% block title %} Usuarios {% endblock %}
+{% block title %} Mis Usuarios {% endblock %}
 
 {% block content %}
 <div class="content-view-admin">
     <div class="container">
-        <h1>Lista de Usuarios</h1>
+        <div class="container-title">
+            <a href={% url 'index' %}><i class='bx bx-left-arrow-alt'></i>volver</a>
+            <h1>Usuarios</h1>
+        </div>
         <table class="table table-dark table-striped-columns">
             <thead>
                 <tr>

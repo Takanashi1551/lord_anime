@@ -1,0 +1,39 @@
+{% extends 'admin/base.html' %}
+
+{% block title %} Poster Animes {% endblock %}
+
+{% block content %}
+<div class="content-view-admin">
+    <div class="container">
+        <div class="container-title">
+            <a href={% url 'index' %}><i class='bx bx-left-arrow-alt'></i>volver</a>
+            <h1>Poster promocional anime</h1>
+            <a href={% url 'animes_add' %} class="add-anime">Agregar<i class='bx bx-plus-circle'></i></a>
+        </div>
+        <!-- Content of main poster -->
+        <main>
+            <section class="p-1">
+                <h2 class="section-title">Animes agregados</h2>
+                <div class="content-space">
+                    <div class="content-flex">
+                        {% for anime in anime_list %}
+                        <div class="content-box-poster">
+                            <img src="../../static/img/animes/{{ anime.animes_poster_url }}" class="content-poster">
+                                <h1 class="content-text text-image">{{ anime.animes_name }}</h1>
+                                <h2 class="text-image-issue box-year">{{ anime.animes_release_year | date:"Y" }}</h2>
+                                <div class="content-color">
+                                    <a href={% url 'animes_edit' anime.id %} class="btn btn-primary gap-2 text-edit-poster">Editar Poster</a>
+                                    <form method="POST" action={% url 'animes_delete' anime.id %}>
+                                        {% csrf_token %}
+                                        <button class=" btn btn-danger gap-2 a-delete-poster" onclick="return confirm('¿Estas seguro de eliminar este anime?');" href="">Eliminar</button>
+                                    </form>
+                                </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+{% endblock %}

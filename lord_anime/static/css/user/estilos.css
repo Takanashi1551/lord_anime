@@ -186,14 +186,12 @@ html, body {
 }
 
 /*----- Content of Main -----*/
-
 /*----- Content of Profile -----*/
 .background-profile {
     background-color: #FAFBFD;
     margin-top: 75px;
     width: 100%;
     height: 100%;
-    
 }
 
 .profile-picture {
@@ -612,42 +610,7 @@ html, body {
     }
 }
 
-/*----- Container Footer -----*/
-footer {
-    background: #7fcff4; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #7fcff4 0%, #6A5ACD 100%); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #7fcff4 0%, #6A5ACD 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-top: 30px;
-    padding-bottom: 20px;
-}
-
-.footer-content p {
-    color: #FFFFFF;
-    font-size: 25px;
-    font-family: 'Shadows Into Light';
-}
-
-@media screen and (max-width:500px) {
-    .footer-content p {
-        font-size: 20px;
-    }
-}
-
-@media screen and (max-width:350px) {
-    .footer-content p {
-        font-size: 15px;
-    }
-}
-
 /*----- Content of Login, Signup and Recover -----*/
-
 /*----- Content Login -----*/
 .body-login-content {
     display: flex;
@@ -978,4 +941,36 @@ footer {
     margin: 5px 0px 10px;
 }
 
-/*----- Content of Animes (ver animes) -----*/
+/*----- Container Footer -----*/
+footer {
+    background: #7fcff4; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #7fcff4 0%, #6A5ACD 100%); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7fcff4 0%, #6A5ACD 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.footer-content p {
+    color: #FFFFFF;
+    font-size: 25px;
+    font-family: 'Shadows Into Light';
+}
+
+@media screen and (max-width:500px) {
+    .footer-content p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .footer-content p {
+        font-size: 15px;
+    }
+}

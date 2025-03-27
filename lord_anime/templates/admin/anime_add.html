@@ -1,0 +1,41 @@
+{% extends 'admin/base.html' %}
+
+{% block title %} Agregar Anime {% endblock %}
+
+{% block content %}
+<div class="body-user-content">
+    <div class="user-content">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Agregar Anime</h1>
+            <div class="input-content">
+                <input type="text" name="animes_name" id="animes_name" maxlength="240" placeholder="Nombre del anime">
+                <i class='bx bxs-happy'></i>
+            </div>
+            <div class="text-area">
+                <textarea name="animes_sypnosis" id="animes_sypnosis" cols="40" rows="6" maxlength="2000" placeholder="Escribe la sipnosis del anime"></textarea>
+            </div>
+            <div class="radio-area">
+                    <div><input type="radio" name="animes_status" id="animes_status" value="1">Emisión</div>
+                    <div><input type="radio" name="animes_status" id="animes_status" value="0">Finalizado</div>
+            </div>
+            <div class="input-content">
+                <select name="animes_type"id="animes_type"  maxlength="240" >
+                    <option value="Anime">Anime</option>
+                    <option value="OVA">OVA</option>
+                    <option value="Especial">Especial</option>
+                    <option value="Pelicula">Pelicula</option>
+                </select>
+            </div>
+            <div class="input-content">
+                <input type="text" name="animes_release_year" id="animes_release_year">
+                <i class='bx bxs-calendar-alt'></i>
+            </div>
+            <div class="input-content">
+                <input type="file" name="animes_poster_url" id="animes_poster_url">
+            </div>
+            <button type="submit" class="btn-admin">Guardar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

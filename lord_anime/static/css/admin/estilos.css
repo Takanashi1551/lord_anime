@@ -141,11 +141,65 @@ a:hover {
 }
 
 /*----- Style of the Admin user, photo, etc -----*/
-.content-view-admin h1 {
+.container-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 50px 15px;
+}
+
+.container-title h1 {
     color: black;
     padding: 10px 50px 15px;
     text-align: center;
 }
+
+.container-title a {
+    color: #FFFFFF;
+    outline: none;
+    text-decoration: none;
+    position: absolute;
+    left: 200px;
+    width: 200px;
+    font-size: 30px;
+    background: linear-gradient(to bottom,#1E90FF, #CB2525);
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5 ease-in-out;
+}
+
+.container-title a:hover{
+    background: linear-gradient(to bottom,#CB2525, #1E90FF);
+    color: #000000;
+    transform: translate(-5px, -5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.container-title i {
+    margin: 10px;
+}
+
+.container-title i, a span {
+    vertical-align: middle; /* Asegura que estén alineados */
+}
+
+.container-title .add-anime {
+    left: 1200px;
+}
+
+@media screen and (max-width:920px) {
+    .container-title a {
+        left: 70px;
+    }
+
+    .container-title .add-anime {
+        left: 650px;
+    }
+}
+
 
 /*----- content Style table -----*/
 .table th, td ,a , button{
@@ -153,12 +207,13 @@ a:hover {
 }
 
 .table a, button {
-    width: 40%;
+    width: 50%;
+    padding: 10px;
     text-align: center;
 }
 
 button:hover {
-    background: linear-gradient(to bottom, #1e90ff, #cb2525);
+    background: linear-gradient(to bottom, #1E90FF, #CB2525);
     color: #000000;
     -webkit-transition: all .5s ease-in-out;
     /* elevation Botton in the mouse */
@@ -166,12 +221,45 @@ button:hover {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
 }
 
+/*----- Style of the Admin user form -----*/
+@media screen and (max-width:920px) {
+    .container-title a {
+        font-size: 20px;
+        left: 150px;
+        width: 120px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .container-title {
+        padding: 30px 50px 15px;
+    }
+
+    .container-title a {
+        font-size: 15px;
+        left: 50px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .container-title {
+        padding: 30px 50px 15px;
+    }
+
+    .container-title a {
+        font-size: 15px;
+        left: 30px;
+        width: 100px;
+    }
+}
+
 /*----- content Style user form -----*/
 .body-user-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 .user-content {
     width: 420px;
@@ -239,6 +327,43 @@ option{
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
+}
+
+.text-area textarea {
+    background: rgba(216, 181, 255, 0.5);
+    color: #000000;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    font-size: 16px;
+    padding: 20px 45px 20px 20px;
+}
+
+.text-area textarea::placeholder {
+    color: #000000;
+}
+
+.radio-area {
+    background: rgba(216, 181, 255, 0.5);
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    position: relative;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    font-size: 16px;
+    padding: 10px 45px 10px 10px;
+    text-align: center;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
 }
 
 .user-content .btn-admin {
@@ -335,5 +460,269 @@ option{
         top: 60%;
         transform: translateY(-40%);
         font-size: 16px;
+    }
+}
+
+/*----- Style of the poster form  and views-----*/
+.section-title {
+    text-align: center;
+    margin: auto;
+    padding: 5px 0;
+    font-size: 30px;
+}
+
+.content-space {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.content-flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 35px;
+}
+
+.content-box-poster {
+    width: 15%;
+    height: 20%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 1em 0 0;
+    position: relative;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.content-box-poster .content-poster {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+.content-flex .content-box-poster {
+    transition: all 600ms cubic-bezier(1, 0, 0, 1);
+}
+
+.content-flex .content-box-poster:hover {
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 1),
+        5px 5px 0px 0px #d8b5ff, /*Controller the size of transition*/
+        0.3em 0.3em 1em rgba(0, 0, 0, 1);
+    transform: translate(-5px, -5px);
+}
+
+.content-box-poster:hover .text-image {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 300ms ease-out;
+}
+
+.content-text {
+    background: rgba(106, 90, 205, 0.9);
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.text-image {
+    width: 100%;
+    height: 30px;
+    padding: .2em;
+    font-size: 17px;
+    font-family: 'Shadows Into Light';
+    font-weight: 800;
+    color: #000000;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* shorten the letters */
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 300ms ease-out;
+}
+
+/*----- Content of emissions -----*/
+.text-image-issue {
+    bottom: 88%;
+    height: 10%;
+    padding: .4em;
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 300ms ease-out;
+}
+
+.content-box-poster:hover .text-image-issue {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 300ms ease-out;
+}
+
+.box-year {
+    background: rgba(106, 90, 205, 0.9);
+    width: 25%;
+    right: 0%;
+    font-weight: 800;
+    color: #000000;
+    font-family: 'Shadows Into Light';
+    letter-spacing: 1px;
+    font-size: 15px;
+    border-top-right-radius: 11px;
+    border-bottom-left-radius: 12px;
+    text-align: center;
+}
+
+.content-color {
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* shorten the letters */
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 400ms ease-out;
+}
+
+.content-box-poster:hover .content-color {
+    background: rgba(0, 0, 0, 0.7);
+    height: 300px;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 400ms ease-out;
+}
+
+.text-edit-poster {
+    color: #FFFFFF;
+    font-size: 25px;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+.a-delete-poster {
+    width: auto;
+    color: #FFFFFF;
+    top: 60%;
+    left: 20%;
+    font-size: 25px;
+    text-align: center;
+    position: absolute;
+}
+
+/*----- Responsive Main -----*/
+@media screen and (max-width: 1200px) {
+    .background {
+        margin-top: 63px;
+    }
+
+    .content-box {
+        width: 31%;
+        border-radius: 15px;
+        margin: 7px 1em 0 0;
+    }
+
+    .content-box .content-image {
+        height: 170px;
+    }
+
+    .content-flex .content-box:hover {
+        box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 1),
+            4px 4px 0px 0px #D8B5FF,
+            /*Controller the size of transition*/
+            0.3em 0.3em 1em rgba(0, 0, 0, 1);
+        transform: translate(-4px, -4px);
+    }
+
+    .content-box-poster {
+        width: 22%;
+        height: 20%;
+        border-radius: 15px;
+        margin: 10px 1em 0 0;
+    }
+
+    .content-box-poster .content-poster {
+        height: 260px;
+    }
+
+    .content-text {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content-box-poster {
+        width: 29%;
+        margin: 10px 1em 0 0;
+    }
+
+    .content-box-poster .content-poster {
+        height: 250px;
+    }
+
+    .text-image-issue {
+        bottom: 86%;
+        height: 13%;
+        padding: .6em;
+    }
+
+    .box-year {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section-title {
+        font-size: 23px;
+    }
+
+    .content-space {
+        width: 100%;
+    }
+
+    .content-box-poster {
+        width: 29%;
+        margin: 10px 1em 0 0;
+        border-radius: 10px;
+    }
+
+    .content-box-poster .content-poster {
+        height: 210px;
+    }
+
+    .content-text {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .text-image-issue {
+        bottom: 83%;
+        height: 15%;
+        padding: .5em;
+    }
+
+    .box-year {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .content-box-poster {
+        width: 43%;
+    }
+
+    .content-box-poster .content-poster {
+        height: 200px;
     }
 }

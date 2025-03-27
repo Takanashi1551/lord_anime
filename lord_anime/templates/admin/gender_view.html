@@ -1,0 +1,39 @@
+{% extends 'admin/base.html' %}
+
+{% block title %} Generos Anime {% endblock %}
+
+{% block content %}
+<div class="content-view-admin">
+    <div class="container">
+        <div class="container-title">
+            <a href={% url 'index' %}><i class='bx bx-left-arrow-alt'></i>volver</a>
+            <h1>Generos</h1>
+            <a href="" class="add-anime">Agregar<i class='bx bx-plus-circle'></i></a>
+        </div>
+        <table class="table table-dark table-striped-columns">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">GENEROS</th>
+                    <th scope="col">ACCIONES</th>
+                </tr>
+            </thead>
+            {% for genders in gender_list %}
+            <tbody>
+                <tr>
+                    <td> {{ genders.id }} </td>
+                    <td>{{ genders.animes_genders_name }}</td>
+                    <td>
+                        <a href="" class="btn btn-primary gap-2">Editar</a>
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este usuario?');" class="btn btn-danger gap-2">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
